@@ -17,9 +17,9 @@ cask "devswitcher2" do
             delete: "/Applications/DevSwitcher2.app"
 
   # Conflicts with other versions
-  conflicts_with cask: [
-    "devswitcher2@2.5.1"
-  ]
+  # conflicts_with cask: [
+  #   "devswitcher2@2.5.1"
+  # ]
 
   # Preflight to handle existing installations
   preflight do
