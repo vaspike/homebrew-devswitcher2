@@ -16,9 +16,9 @@ cask "devswitcher2" do
   uninstall quit: "com.rivermao.DevSwitcher2"
 
   # Conflicts with other versions
-  conflicts_with cask: [
-    "devswitcher2@2.5.1"
-  ]
+  # conflicts_with cask: [
+  #   "devswitcher2@2.5.1"
+  # ]
 
   # User notices
   caveats <<~EOS
