@@ -1,4 +1,4 @@
-cask "devswitcher2@2.0.0" do
+cask "devswitcher2@2.5.1" do
   version "2.5.1"
   sha256 "c5f2eae4aa084e7991052c5093c63af3ddd02b0693c38e4e3657b6de121ad59d"  # 需要替换为实际的 SHA256
 
