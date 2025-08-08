@@ -13,12 +13,19 @@ cask "devswitcher2@2.5.1" do
   app "DevSwitcher2.app"
 
   # Cleanup operations during uninstall
-  uninstall quit: "com.rivermao.DevSwitcher2"
+  uninstall quit: "com.rivermao.DevSwitcher2",
+            delete: "/Applications/DevSwitcher2.app"
 
-  # Conflicts with other versions
-  conflicts_with cask: [
-    "devswitcher2",
-  ]
+  # # Conflicts with other versions
+  # conflicts_with cask: [
+  #   "devswitcher2",
+  # ]
+  # Preflight to handle existing installations
+  preflight do
+    if File.exist?("/Applications/DevSwitcher2.app")
+      system_command "rm", args: ["-rf", "/Applications/DevSwitcher2.app"]
+    end
+  end
 
   # User notices
   caveats <<~EOS
