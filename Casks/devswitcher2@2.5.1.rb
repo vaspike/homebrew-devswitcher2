@@ -1,10 +1,10 @@
-cask "devswitcher2" do
-  version "2.1.1"
-  sha256 "8bc5c754bce105ff13c3c42deff9b3e9a670333845cc56c1ad8f6d67c9163c68"
+cask "devswitcher2@2.0.0" do
+  version "2.5.1"
+  sha256 "c5f2eae4aa084e7991052c5093c63af3ddd02b0693c38e4e3657b6de121ad59d"  # 需要替换为实际的 SHA256
 
   url "https://github.com/vaspike/DevSwitcher2/releases/download/v#{version}/DevSwitcher2-#{version}.dmg"
   name "DevSwitcher2"
-  desc "Efficient and elegant macOS window switching tool"
+  desc "Efficient and elegant macOS window switching tool (version #{version})"
   homepage "https://github.com/vaspike/DevSwitcher2"
 
   # Minimum system requirements for the app
@@ -17,13 +17,13 @@ cask "devswitcher2" do
 
   # Conflicts with other versions
   conflicts_with cask: [
-    "devswitcher2@2.5.1"
+    "devswitcher2",
   ]
 
   # User notices
   caveats <<~EOS
-    DevSwitcher2 requires Accessibility permissions to function properly.
-    > DevSwitcher2 需要辅助功能权限才能正常工作。
+    DevSwitcher2 #{version} requires Accessibility permissions to function properly.
+    > DevSwitcher2 #{version} 需要辅助功能权限才能正常工作。
 
     On first launch, please follow the in-app guidance to grant permissions at:
     System Preferences → Security & Privacy → Privacy → Accessibility
@@ -38,4 +38,4 @@ cask "devswitcher2" do
 
     For more information / 更多信息: https://github.com/vaspike/DevSwitcher2
   EOS
-end 
+end
