@@ -1,6 +1,6 @@
 cask "devswitcher2" do
-  version "2.4.1"
-  sha256 "14c43d13f492034a837948b75fe4e25ec00afa9614bce0ba9a60afede251f9c3"
+  version "2.5.1"
+  sha256 "c5f2eae4aa084e7991052c5093c63af3ddd02b0693c38e4e3657b6de121ad59d"
 
   url "https://github.com/vaspike/DevSwitcher2/releases/download/v#{version}/DevSwitcher2-#{version}.dmg"
   name "DevSwitcher2"
