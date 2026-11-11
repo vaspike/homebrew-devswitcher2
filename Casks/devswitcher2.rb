@@ -10,7 +10,7 @@ cask "devswitcher2" do
   homepage "https://github.com/vaspike/DevSwitcher2"
 
   # Minimum system requirements for the app
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "DevSwitcher2.app"
 
@@ -19,9 +19,8 @@ cask "devswitcher2" do
   #   "devswitcher2@2.5.1"
   # ]
 
-  # Cleanup operations during uninstall
-  uninstall quit:   "com.rivermao.DevSwitcher2",
-            delete: "/Applications/DevSwitcher2.app"
+  # Quit the app during uninstall; Homebrew manages the app artifact itself.
+  uninstall quit: "com.rivermao.DevSwitcher2"
 
   # User notices
   caveats <<~EOS
