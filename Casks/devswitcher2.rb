@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 cask "devswitcher2" do
-  version "2.7.1"
-  sha256 "41e157f5585184bfc8db519302fc97e2db7e5afc927968bf0ff3030aca04d091"
+  version "2.9.0"
+  sha256 "97d8bfa3ac6a686cb337658e9ca35ad9003185c4e9e94cf400a03d69db44963e"
 
   url "https://github.com/vaspike/DevSwitcher2/releases/download/v#{version}/DevSwitcher2-#{version}.dmg"
   name "DevSwitcher2"
-  desc "Efficient and elegant macOS window switching tool"
+  desc "Efficient and elegant window switching tool"
   homepage "https://github.com/vaspike/DevSwitcher2"
 
   # Minimum system requirements for the app
@@ -12,21 +14,14 @@ cask "devswitcher2" do
 
   app "DevSwitcher2.app"
 
-  # Cleanup operations during uninstall
-  uninstall quit: "com.rivermao.DevSwitcher2",
-            delete: "/Applications/DevSwitcher2.app"
-
   # Conflicts with other versions
   # conflicts_with cask: [
   #   "devswitcher2@2.5.1"
   # ]
 
-  # Preflight to handle existing installations
-  preflight do
-    if File.exist?("/Applications/DevSwitcher2.app")
-      system_command "rm", args: ["-rf", "/Applications/DevSwitcher2.app"]
-    end
-  end
+  # Cleanup operations during uninstall
+  uninstall quit:   "com.rivermao.DevSwitcher2",
+            delete: "/Applications/DevSwitcher2.app"
 
   # User notices
   caveats <<~EOS
@@ -41,9 +36,9 @@ cask "devswitcher2" do
     Default hotkeys / 默认快捷键：
     - Command + ` (backtick): Switch between windows within the same app
       Command + ` (反引号): 同应用内窗口切换
-    - Command + Tab: Switch between applications (needs to be enabled in preferences)
-      Command + Tab: 应用间切换（需要在偏好设置中启用）
+    - Command + Tab: Switch between applications (enabled by default; can be disabled in preferences)
+      Command + Tab: 应用间切换（默认启用，可在偏好设置中关闭）
 
     For more information / 更多信息: https://github.com/vaspike/DevSwitcher2
   EOS
-end 
+end
